@@ -193,59 +193,79 @@ Not eliminating risk.
 
 Reducing it.
 
-
-### Best practices for container security
+## Best Practices for Container Security - Keeping Small Universes Stable
 
 If containers create small universes, security engineers must assume those universes might eventually misbehave.
 
-Several practices significantly reduce the risk.
+Software, much like human societies, has a remarkable talent for finding creative ways to break its own rules.
 
-**Run containers as non-root**
+Fortunately, a few practical precautions can keep these small worlds reasonably well behaved.
 
-Many containers still run as root by default.  
+### Run containers as non-root
+
+Many containers still run as **root** by default.
+
 This is convenient.
 
 It is also unnecessary in most cases.
 
-Running as a non-root user limits what a compromised process can do.
+Running as root inside a container gives a process far more authority than it actually needs. If that process becomes compromised, the attacker inherits the same privileges.
+
+Running containers as a **non-root user** limits the damage.
+
+Even in small universes, absolute power rarely ends well.
 
 
-**Drop unnecessary Linux capabilities**
+### Drop unnecessary Linux capabilities
 
-Linux breaks root privileges into smaller units called **capabilities**.
+In Linux, the powers traditionally associated with the root user are divided into smaller permissions called **capabilities**.
 
-Containers rarely need the full set.
+Most applications require only a handful of them.
 
-Removing unnecessary capabilities shrinks the attack surface.
+Yet many containers run with far more privileges than necessary.
 
+Removing unused capabilities reduces the number of ways a compromised process can interact with the system.
 
-**Avoid privileged containers**
-
-A privileged container has broad access to the host system.
-
-At that point, the isolation becomes mostly ceremonial.
-
-Privileged containers should be treated with extreme caution.
+Less power usually means fewer interesting ways to misuse it.
 
 
-**Use seccomp and security profiles**
+### Avoid privileged containers
 
-Tools like **seccomp**, **AppArmor**, and **SELinux** restrict which system calls containers can use.
+A **privileged container** has broad access to the host system.
 
-This acts as a second layer of defense if a process becomes compromised.
+At that point, the idea of isolation becomes… somewhat ceremonial.
+
+Privileged containers can be useful for specialized tasks, but they should be treated with extreme caution.
+
+Granting that level of access is less like opening a window and more like **removing the wall entirely**.
 
 
-**Keep the host system patched**
+### Use seccomp and security profiles
 
-Because the kernel is shared, the host operating system becomes the **true security boundary**.
+Tools like **seccomp**, **AppArmor**, and **SELinux** restrict which system calls a container is allowed to make.
 
-If the host kernel is vulnerable, every container inherits the problem.
+Think of them as rules that quietly define what actions are even possible inside that world.
 
-The most sophisticated container security strategy still depends on one very traditional practice:
+If a process becomes compromised, these restrictions can prevent it from doing anything particularly adventurous.
+
+Even mischievous programs have a harder time causing trouble when the list of allowed actions is very short.
+
+
+### Keep the host system patched
+
+Because containers share the same kernel, the **host operating system becomes the real security boundary**.
+
+If the host kernel is vulnerable, every container inherits that weakness.
+
+Which means that the most sophisticated container security strategy still depends on one very traditional practice:
 
 keeping systems updated.
 
-Not glamorous.
+It is not glamorous.
+
+It rarely appears in conference talks.
+
+But it remains one of the most reliable defenses ever invented.
 
 Still undefeated.
 
