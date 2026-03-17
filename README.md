@@ -19,6 +19,7 @@ We still explain complex behavior using simplified models.
 
 Only the vocabulary has improved... Slightly... Arguably...
 
+---
 
 ## What this repository is about
 
@@ -36,6 +37,7 @@ Systems within systems.
 Boundaries and guardians.
 Power, control, and failure.
 
+---
 
 ## The approach
 
@@ -54,6 +56,7 @@ is to describe it using a language that was never designed for it.
 This may or may not be a good idea. 
 So far, it seems to help.
 
+---
 
 ## What you’ll find here
 
@@ -62,6 +65,7 @@ So far, it seems to help.
 * Essays connecting technology with human behavior
 * Occasional overthinking presented with confidence
 
+--- 
 
 ## A small note
 
