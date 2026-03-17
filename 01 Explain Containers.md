@@ -132,34 +132,51 @@ A container with ten processes believes the entire universe contains exactly ten
 It is, in a technical sense, a very confident misunderstanding.
 
 
-## The kernel:  hidden layer of reality 
+## The Kernel — The Hidden Layer of Reality
 
-*In Greek mythology, souls had to cross the river Styx to reach the deeper layers of existence.*
+In ancient myths, Atlas was condemned to hold up the heavens.
 
-Despite this isolation, containers share something fundamental.
+Not as a ruler. But as something far more fundamental - A silent foundation.
 
-They all run on the **same kernel**.
+
+Despite their isolation, containers share something essential.
+
+They all run on the same kernel.
 
 That means the container’s universe exists only because the host system allows it to exist.
 
-The container may believe it has its own process tree.  
+The container may believe it has its own process tree.
 But the host can see everything.
 
-From the host’s perspective, containers are simply **groups of ordinary processes**.
+From the host’s perspective, containers are simply **ordinary processes with carefully drawn boundaries**.
 
-This asymmetry is important.
+This asymmetry matters.
 
 Inside the container:
 
-> "We are the world."
+> “We are the world.”
 
 Outside the container:
 
-> "You are just a few processes with extra boundaries."
+> “You are just a few processes with extra boundaries.”
+
+
+The kernel plays a role similar to Atlas.
+
+It quietly holds everything together:
+
+* process scheduling
+* memory management
+* system calls
+* device access
+
+Every container, every process, every illusion of isolation ultimately depends on it.
+
+Not one of them exists independently.
 
 This is why containers are lightweight.
 
-A virtual machine needs its own kernel.
+A virtual machine brings its own kernel.
 
 A container borrows one.
 
@@ -170,8 +187,8 @@ And also slightly dangerous.
 
 ## Security Implications — Every World Needs a Guardian
 
-*In Greek mythology, the entrance to the underworld was guarded by Cerberus — a creature whose entire purpose was to prevent things from escaping.*
-*Security systems serve a similar purpose.*
+*At the entrance to the underworld stood Cerberus — a creature whose only purpose was to ensure that nothing escaped.
+Security systems tend to follow the same philosophy.*
 
 Because containers share the host kernel, **the isolation is not absolute**.
 
